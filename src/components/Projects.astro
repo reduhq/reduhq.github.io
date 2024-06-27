@@ -1,0 +1,23 @@
+---
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<section class="container">
+    <h2 class="mt-[10rem] mb-[1rem] text-[1.5rem] text-center">Projects</h2>
+    <section class="grid grid-cols-[repeat(auto-fill,_minmax(25rem,_1fr))] gap-[1rem]">
+        <ProjectCard
+            image="/portfolio/noxbrew_img.jpeg"
+            title="Noxbrew"
+            description="NOXBREW es una plataforma web que diseñé y desarrollé para la venta de café, combinando una experiencia de usuario intuitiva con una interfaz atractiva y funcional."
+            url='https://noxbrew.vercel.app/'
+            githubFrontend='https://github.com/reduhq/NOXBREW'
+            githubBackend='https://github.com/reduhq/NOXBREW-API'
+        />
+        <ProjectCard
+            image="/portfolio/book_store_api.png"
+            title="BookStore API"
+            description=" Una API que emula una tienda de libros en línea, permitiendo a los usuarios registrarse como lectores o escritores. Los lectores pueden explorar y guardar libros, mientras que los escritores pueden publicar y gestionar sus obras."
+            githubBackend='https://github.com/reduhq/BookStoreAPI'
+        />
+    </section>
+</section>

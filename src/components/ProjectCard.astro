@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props{
+    image:string
+    title:string
+    description:string
+    githubFrontend?:string
+    githubBackend?:string
+    url?:string
+}
+const {image, title, description, githubFrontend, githubBackend, url} = Astro.props
+---
+
+<article class=" rounded-[1rem] bg-[#0d1117]">
+    <img class="rounded-t-[1rem]" src={image} alt={title}>
+    <div class="p-[1rem]">
+        <h2 class="font-bold text-primary">{title}</h2>
+        <p>{description}</p>
+        <div class="flex flex-wrap gap-[.5rem] mt-[1rem]">
+            {githubFrontend&&<a href={githubFrontend} target="_blank" class="flex gap-[.5rem] items-center border border-primary px-[1.5rem] py-[.5rem] rounded-[.5rem]"><Icon name="mdi:github" size={25}/> Frontend</a>}
+            {githubBackend&&<a href={githubBackend} target="_blank" class="flex gap-[.5rem] items-center border border-primary px-[1.5rem] py-[.5rem] rounded-[.5rem]"><Icon name="mdi:github" size={25}/> Backend</a>}
+            {url&&<a href={url} target="_blank" class="flex gap-[.5rem] items-center border border-primary px-[1.5rem] py-[.5rem] rounded-[.5rem]"><Icon name="mdi:link-variant" size={25}/> URL</a>}
+        </div>
+    </div>
+</article>
