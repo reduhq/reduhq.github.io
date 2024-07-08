@@ -1,23 +1,94 @@
 ---
 import ProjectCard from '../components/ProjectCard.astro';
+import NextJS from '../icons/NextJS.astro';
+import React from '../icons/React.astro'
+import ExpressJS from '../icons/ExpressJS.astro'
+import Typescript from '../icons/Typescript.astro'
+import Prisma from '../icons/Prisma.astro'
+import PostgreSQL from '../icons/PostgreSQL.astro'
+import FastAPI from '../icons/FastAPI.astro'
+import Python from '../icons/Python.astro'
+import SQLAlchemy from '../icons/SQLAlchemy.astro'
+import Docker from '../icons/Docker.astro'
+import JWT from '../icons/JWT.astro'
+
+const TAGS = {
+    NEXT:{
+        name:"Next.js",
+        class:"bg-[#000] text-[#fff]",
+        icon:NextJS
+    },
+    REACT:{
+        name:"React",
+        class:"bg-[#23272f] text-[#fff]",
+        icon:React
+    },
+    EXPRESS:{
+        name:"Express.js",
+        class:"bg-[#000] text-[#fff]",
+        icon:ExpressJS
+    },
+    TYPESCRIPT:{
+        name:"TypeScript",
+        class:"bg-[#235a9799] text-[#fff]",
+        icon:Typescript
+    },
+    PRISMA:{
+        name:"Prisma",
+        class:"bg-[#000] text-[#fff]",
+        icon:Prisma
+    },
+    POSTGRE:{
+        name:"PostgreSQL",
+        class:"bg-[#31619299] text-[#fff]",
+        icon:PostgreSQL
+    },
+    FASTAPI:{
+        name:"FastAPI",
+        class:"bg-[#006e6366] text-[#fff]",
+        icon:FastAPI
+    },
+    PYTHON:{
+        name:"Python",
+        class:"bg-[#193449] text-[#fff]",
+        icon:Python
+    },
+    SQLALCHEMY:{
+        name:"SQLAlchemy",
+        class:"bg-[#222] text-[#fff]",
+        icon:SQLAlchemy
+    },
+    DOCKER:{
+        name:"Docker",
+        class:"bg-[#2ca5e044] text-[#fff]",
+        icon:Docker
+    },
+    JWT:{
+        name:"JWT",
+        class:"bg-[#d63aff66] text-[#fff]",
+        icon:JWT
+    }
+}
 ---
 
 <section class="container">
     <h2 class="mt-[10rem] mb-[1rem] text-[1.5rem] text-center">Projects</h2>
     <section class="grid grid-cols-[repeat(auto-fill,_minmax(25rem,_1fr))] gap-[1rem]">
         <ProjectCard
-            image="/portfolio/noxbrew_img.jpeg"
+            image="/portfolio/noxbrew-web.jpg"
             title="Noxbrew"
             description="NOXBREW es una plataforma web que diseñé y desarrollé para la venta de café, combinando una experiencia de usuario intuitiva con una interfaz atractiva y funcional."
             url='https://noxbrew.vercel.app/'
             githubFrontend='https://github.com/reduhq/NOXBREW'
             githubBackend='https://github.com/reduhq/NOXBREW-API'
+            tags={[TAGS.NEXT, TAGS.REACT, TAGS.EXPRESS, TAGS.TYPESCRIPT, TAGS.PRISMA, TAGS.POSTGRE]}
         />
         <ProjectCard
             image="/portfolio/book_store_api.png"
             title="BookStore API"
             description=" Una API que emula una tienda de libros en línea, permitiendo a los usuarios registrarse como lectores o escritores. Los lectores pueden explorar y guardar libros, mientras que los escritores pueden publicar y gestionar sus obras."
             githubBackend='https://github.com/reduhq/BookStoreAPI'
+            tags={[TAGS.PYTHON, TAGS.FASTAPI, TAGS.POSTGRE, TAGS.SQLALCHEMY, TAGS.DOCKER, TAGS.JWT]}
         />
     </section>
 </section>
