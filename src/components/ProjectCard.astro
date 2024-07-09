@@ -8,7 +8,7 @@ interface Props{
     githubFrontend?:string
     githubBackend?:string
     url?:string
-    tags:Array<{name:string, class:string, icon:any}>
+    tags:Array<{name:string, class:string, icon:string}>
 }
 const {image, title, description, githubFrontend, githubBackend, url, tags} = Astro.props
 ---
@@ -26,7 +26,7 @@ const {image, title, description, githubFrontend, githubBackend, url, tags} = As
         <div class="mt-[2rem]">
             <ul class="flex flex-wrap gap-[.5rem]">
                 {tags.map(tag =>(
-                    <li class={`flex items-center gap-[.5rem] rounded-[1rem] px-[1rem] ${tag.class}`}><tag.icon class={`size-[1rem]`}/> {tag.name}</li>
+                    <li class={`flex items-center gap-[.5rem] rounded-[1rem] px-[1rem] ${tag.class}`}><Icon name={tag.icon} /> {tag.name}</li>
                 ))}
             </ul>
         </div>
