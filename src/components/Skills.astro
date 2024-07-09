@@ -1,10 +1,18 @@
+---
+import { Icon } from 'astro-icon/components'
+import data from './../tags.json'
+const TAGS:{[tag:string]:{name:string, icon:string, class:string}} = data.TAGS
+---
 
-<section class="mt-[2rem] text-[1.5rem]">
+
+<section class="mt-[6rem] text-[1.5rem]">
     <div class="container">
         <h2 class="text-center">Skills</h2>
-        <div>
-            <ul>
-                
+        <div class="mt-[1rem]">
+            <ul class="flex flex-wrap gap-[1rem] justify-center">
+                {Object.keys(TAGS).map(tag =>(
+                    <li class="bg-[#0d1117] h-[7rem] w-[7rem] rounded-[.5rem] flex flex-col items-center justify-center text-[.5rem] gap-[.5rem]"><Icon name={`${TAGS[`${tag}`].icon}`} size={50}/> {TAGS[tag].name}</li>
+                ))}
             </ul>
         </div>
     </div>
