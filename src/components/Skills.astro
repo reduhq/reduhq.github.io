@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components'
 import data from './../tags.json'
 const TAGS:{[tag:string]:{name:string, icon:string, class:string}} = data.TAGS
+
 ---
 
 
@@ -11,9 +12,58 @@ const TAGS:{[tag:string]:{name:string, icon:string, class:string}} = data.TAGS
         <div class="mt-[1rem]">
             <ul class="flex flex-wrap gap-[1rem] justify-center">
                 {Object.keys(TAGS).map(tag =>(
-                    <li class="bg-[#0d1117] h-[7rem] w-[7rem] rounded-[.5rem] flex flex-col items-center justify-center text-[.5rem] gap-[.5rem]"><Icon name={`${TAGS[`${tag}`].icon}`} size={50}/> {TAGS[tag].name}</li>
+                    <li class="bg-[#0d1117] h-[7rem] w-[7rem] rounded-[.5rem] flex">
+                        <div class="select-none z-10 h-full w-full flex flex-col justify-center items-center gap-[.5rem] text-[.5rem]">
+                            <Icon name={`${TAGS[`${tag}`].icon}`} size={50}/> {TAGS[tag].name}
+                        </div>
+                    </li>
                 ))}
             </ul>
         </div>
     </div>
 </section>
+
+<script>
+    let cards = document.querySelectorAll('li')
+    cards.forEach(card => {
+        card.onmousemove = function(e){
+            let x = e.pageX - card.offsetLeft
+            let y = e.pageY - card.offsetTop
+
+            card.style.setProperty('--x', x + 'px')
+            card.style.setProperty('--y', y + 'px')
+        }
+    })
+</script>
+
+<style>
+    ul li{
+        position: relative;
+        overflow: hidden;
+    }
+
+    ul li::before{
+        content: '';
+        position: absolute;
+        top: var(--y);
+        left: var(--x);
+        transform: translate(-50%, -50%);
+        background: radial-gradient(#14d4c9, transparent, transparent);
+        width: 14rem;
+        height: 14rem;
+        opacity: 0;
+        transition: 0.5s, top 0s, left 0s;
+    }
+
+    ul li:hover:before{
+        opacity: 1;
+    }
+
+    ul li::after{
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: #0d1117dd;
+        border-radius: .5rem;
+    }
+</style>
