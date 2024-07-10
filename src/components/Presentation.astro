@@ -3,21 +3,45 @@ import { Icon } from 'astro-icon/components'
 ---
 
 
-<section class="container flex flex-col gap-[1rem] md:flex-row">
-    <div class="grow-[1] p-[1rem]">
-        <img class="rounded-full w-[40rem] m-auto" src="/portfolio/profile-picture.png" alt="Rey Eduardo Halsall Quintero">
+<section class="container">
+    <div class="flex flex-col gap-[1rem] md:flex-row">
+        <div class="grow-[1] p-[1rem]">
+            <img class="rounded-full w-[40rem] m-auto" src="/portfolio/profile-picture.png" alt="Rey Eduardo Halsall Quintero">
+        </div>
+        <div class="grow-[2] w-[100%] flex flex-col justify-center">
+            <h3 class="text-primary text-[1.5rem] font-bold">Backend developer</h3>
+            <h1 class="text-[3rem] leading-[3.5rem] font-bold">Hello, I'M Rey <span class="block relative text-primary after:w-[5rem] after:h-[1px] after:bg-primary after:absolute after:bottom-0 after:left-0">Halsall</span></h1>
+            <p class="pt-[.5rem]">I’m a backend developer with notable skills in constructing efficient and robust systems, experienced in server-side logic, database optimizacion, and API implementation. </p>
+            <div class="mt-[1rem]">
+                <button class="bg-primary text-[#000] py-[.5rem] px-[1.5rem] rounded-[.5rem]">Download CV</button>
+                <button class="border-primary border-[1px] py-[.5rem] px-[1.5rem] rounded-[.5rem] ml-[.5rem] text-primary">Contact Info</button>
+            </div>
+            <div class="flex gap-[.5rem] mt-[.5rem]">
+                <a target="_blank" href="https://github.com/reduhq"><Icon name="mdi:github" size={25}/></a>
+                <a target="_blank" href="https://www.linkedin.com/in/rey-halsall/"><Icon name="mdi:linkedin" size={25}/></a>
+            </div>
+        </div>
     </div>
-    <div class="grow-[2] w-[100%] flex flex-col justify-center">
-        <h3 class="text-primary text-[1.5rem] font-bold">Backend developer</h3>
-        <h1 class="text-[3rem] leading-[3.5rem] font-bold">Hello, I'M Rey <span class="block relative text-primary after:w-[5rem] after:h-[1px] after:bg-primary after:absolute after:bottom-0 after:left-0">Halsall</span></h1>
-        <p class="pt-[.5rem]">I’m a backend developer with notable skills in constructing efficient and robust systems, experienced in server-side logic, database optimizacion, and API implementation. </p>
-        <div class="mt-[1rem]">
-            <button class="bg-primary text-[#000] py-[.5rem] px-[1.5rem] rounded-[.5rem]">Download CV</button>
-            <button class="border-primary border-[1px] py-[.5rem] px-[1.5rem] rounded-[.5rem] ml-[.5rem] text-primary">Contact Info</button>
-        </div>
-        <div class="flex gap-[.5rem] mt-[.5rem]">
-            <a target="_blank" href="https://github.com/reduhq"><Icon name="mdi:github" size={25}/></a>
-            <a target="_blank" href="https://www.linkedin.com/in/rey-halsall/"><Icon name="mdi:linkedin" size={25}/></a>
-        </div>
+    <div class="pt-[1rem] moving-div">
+        <Icon name="mdi:chevron-down" size={40} class="m-auto"/>
     </div>
 </section>
+
+<style>
+    .moving-div {
+        position: relative;
+        animation: moveUpDown 1.5s linear infinite;
+    }
+
+    @keyframes moveUpDown {
+        0% {
+            top: 0;
+        }
+        50% {
+            top: .5rem;
+        }
+        100% {
+            top: 0;
+        }
+    }
+</style>
