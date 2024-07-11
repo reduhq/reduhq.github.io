@@ -13,8 +13,8 @@ import { Icon } from 'astro-icon/components'
             <h1 class="text-[3rem] leading-[3.5rem] font-bold">Hello, I'M Rey <span class="block relative text-primary after:w-[5rem] after:h-[1px] after:bg-primary after:absolute after:bottom-0 after:left-0">Halsall</span></h1>
             <p class="pt-[.5rem]">I’m a backend developer with notable skills in constructing efficient and robust systems, experienced in server-side logic, database optimizacion, and API implementation. </p>
             <div class="mt-[1rem]">
-                <button class="bg-primary text-[#000] py-[.5rem] px-[1.5rem] rounded-[.5rem]">Download CV</button>
-                <button class="border-primary border-[1px] py-[.5rem] px-[1.5rem] rounded-[.5rem] ml-[.5rem] text-primary">Contact Info</button>
+                <button class="btn-cv bg-primary text-[#000] py-[.5rem] px-[1.5rem] rounded-[.5rem]">Download CV</button>
+                <button class="btn-contact border-primary border-[1px] py-[.5rem] px-[1.5rem] rounded-[.5rem] ml-[.5rem] text-primary">Contact Info</button>
             </div>
             <div class="flex gap-[.5rem] mt-[.5rem]">
                 <a target="_blank" href="https://github.com/reduhq"><Icon name="mdi:github" size={25}/></a>
@@ -43,5 +43,48 @@ import { Icon } from 'astro-icon/components'
         100% {
             top: 0;
         }
+    }
+
+    .btn-cv{
+        transition: .5s;
+    }
+
+    .btn-cv:hover{
+        color: #fff;
+        box-shadow: 
+            0 0 25px #14d4c9,
+            0 0 50px #14d4c9;
+    }
+
+    .btn-contact{
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: color .5s, box-shadow .5s;
+    }
+    
+    .btn-contact:hover{
+        transition-delay: 0s, .25s;
+        color: #fff;
+        box-shadow: 
+            0 0 25px #14d4c9,
+            0 0 50px #14d4c9;
+    }
+
+    .btn-contact::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 0;
+        height: 100%;
+        background: #14d4c9;
+        transform: skewX(35deg);
+        z-index: -1;
+        transition: 1s;
+    }
+
+    .btn-contact:hover::before{
+        width: 100%;
     }
 </style>

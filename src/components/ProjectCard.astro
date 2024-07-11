@@ -19,16 +19,25 @@ const {image, title, description, githubFrontend, githubBackend, url, tags} = As
         <h2 class="font-bold text-primary">{title}</h2>
         <p>{description}</p>
         <div class="flex flex-wrap gap-[.5rem] mt-[1rem]">
-            {githubFrontend&&<a href={githubFrontend} target="_blank" class="flex gap-[.5rem] items-center bg-[#161b22] hover:bg-[#21262d] border border-[#30363d] px-[1rem] py-[.5rem] rounded-[.5rem]"><Icon name="mdi:github" size={25}/> Frontend</a>}
+            {githubFrontend&&<a href={githubFrontend} target="_blank" class="flex gap-[.5rem] items-center bg-[#161b22] border border-[#30363d] px-[1rem] py-[.5rem] rounded-[.5rem]"><Icon name="mdi:github" size={25}/> Frontend</a>}
             {githubBackend&&<a href={githubBackend} target="_blank" class="flex gap-[.5rem] items-center bg-[#161b22] hover:bg-[#21262d] border border-[#30363d] px-[1rem] py-[.5rem] rounded-[.5rem]"><Icon name="mdi:github" size={25}/> Backend</a>}
             {url&&<a href={url} target="_blank" class="flex gap-[.5rem] items-center bg-[#161b22] hover:bg-[#21262d] border border-[#30363d] px-[1rem] py-[.5rem] rounded-[.5rem]"><Icon name="mdi:link-variant" size={25}/> URL</a>}
         </div>
         <div class="mt-[2rem]">
             <ul class="flex flex-wrap gap-[.5rem]">
                 {tags.map(tag =>(
-                    <li class={`flex items-center gap-[.5rem] rounded-[1rem] px-[1rem] ${tag.class} `}><Icon name={tag.icon} /> {tag.name}</li>
+                    <li class={`flex items-center gap-[.5rem] rounded-[1rem] px-[1rem] ${tag.class} select-none`}><Icon name={tag.icon} /> {tag.name}</li>
                 ))}
             </ul>
         </div>
     </div>
 </article>
+
+<style>
+    a{
+        transition: .5s;
+    }
+    a:hover{
+        background-color: #21262d;
+    }
+</style>
