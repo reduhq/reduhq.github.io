@@ -2,7 +2,10 @@
 import ProjectCard from '../components/ProjectCard.astro';
 import data from './../tags.json'
 
-const TAGS = data.TAGS
+const LANGUAGES = data.LANGUAGES
+const FRONTEND = data.FRONTEND
+const BACKEND = data.BACKEND
+const TOOLS = data.TOOLS
 
 ---
 
@@ -16,14 +19,14 @@ const TAGS = data.TAGS
             url='https://noxbrew.vercel.app/'
             githubFrontend='https://github.com/reduhq/NOXBREW'
             githubBackend='https://github.com/reduhq/NOXBREW-API'
-            tags={[TAGS.NEXT, TAGS.REACT, TAGS.EXPRESS, TAGS.TYPESCRIPT, TAGS.PRISMA, TAGS.POSTGRE]}
+            tags={[FRONTEND.NEXT, FRONTEND.REACT, BACKEND.EXPRESS, LANGUAGES.TYPESCRIPT, BACKEND.PRISMA, BACKEND.POSTGRE]}
         />
         <ProjectCard
             image="/portfolio/book_store_api.png"
             title="BookStore API"
             description=" Una API que emula una tienda de libros en línea, permitiendo a los usuarios registrarse como lectores o escritores. Los lectores pueden explorar y guardar libros, mientras que los escritores pueden publicar y gestionar sus obras."
             githubBackend='https://github.com/reduhq/BookStoreAPI'
-            tags={[TAGS.PYTHON, TAGS.FASTAPI, TAGS.POSTGRE, TAGS.SQLALCHEMY, TAGS.DOCKER, TAGS.JWT]}
+            tags={[LANGUAGES.PYTHON, BACKEND.FASTAPI, BACKEND.POSTGRE, BACKEND.SQLALCHEMY, TOOLS.DOCKER, BACKEND.JWT]}
         />
     </section>
 </section>

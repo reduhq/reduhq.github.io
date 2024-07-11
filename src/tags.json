@@ -1,5 +1,17 @@
 {
-    "TAGS":{
+    "LANGUAGES":{
+        "TYPESCRIPT":{
+            "name":"TypeScript",
+            "class":"bg-[#235a9799] text-[#fff]",
+            "icon":"Typescript"
+        },
+        "PYTHON":{
+            "name":"Python",
+            "class":"bg-[#193449] text-[#fff]",
+            "icon":"Python"
+        }
+    },
+    "FRONTEND":{
         "NEXT":{
             "name":"Next.js",
             "class":"bg-[#000] text-[#fff]",
@@ -9,51 +21,48 @@
             "name":"React",
             "class":"bg-[#23272f] text-[#fff]",
             "icon":"React"
-        },
+        }
+    },
+    "BACKEND":{
         "EXPRESS":{
             "name":"Express.js",
             "class":"bg-[#000] text-[#fff]",
             "icon":"ExpressJS"
-        },
-        "TYPESCRIPT":{
-            "name":"TypeScript",
-            "class":"bg-[#235a9799] text-[#fff]",
-            "icon":"Typescript"
-        },
-        "PRISMA":{
-            "name":"Prisma",
-            "class":"bg-[#000] text-[#fff]",
-            "icon":"Prisma"
-        },
-        "POSTGRE":{
-            "name":"PostgreSQL",
-            "class":"bg-[#31619299] text-[#fff]",
-            "icon":"PostgreSQL"
         },
         "FASTAPI":{
             "name":"FastAPI",
             "class":"bg-[#006e6366] text-[#fff]",
             "icon":"FastAPI"
         },
-        "PYTHON":{
-            "name":"Python",
-            "class":"bg-[#193449] text-[#fff]",
-            "icon":"Python"
+        "POSTGRE":{
+            "name":"PostgreSQL",
+            "class":"bg-[#31619299] text-[#fff]",
+            "icon":"PostgreSQL"
+        },
+        "PRISMA":{
+            "name":"Prisma",
+            "class":"bg-[#000] text-[#fff]",
+            "icon":"Prisma"
         },
         "SQLALCHEMY":{
             "name":"SQLAlchemy",
             "class":"bg-[#222] text-[#fff]",
             "icon":"SQLAlchemy"
         },
-        "DOCKER":{
-            "name":"Docker",
-            "class":"bg-[#2ca5e044] text-[#fff]",
-            "icon":"Docker"
-        },
         "JWT":{
             "name":"JWT",
             "class":"bg-[#d63aff66] text-[#fff]",
             "icon":"JWT"
         }
+
+    },
+    "TOOLS":{
+        "DOCKER":{
+            "name":"Docker",
+            "class":"bg-[#2ca5e044] text-[#fff]",
+            "icon":"Docker"
+        }
+    },
+    "TAGS":{
     }
 }
