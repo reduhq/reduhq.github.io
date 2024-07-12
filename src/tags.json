@@ -1,5 +1,10 @@
 {
     "LANGUAGES":{
+        "JAVASCRIPT":{
+            "name":"Javascript",
+            "class":"bg-[#235a9799] text-[#fff]",
+            "icon":"Javascript"
+        },
         "TYPESCRIPT":{
             "name":"TypeScript",
             "class":"bg-[#235a9799] text-[#fff]",
@@ -12,15 +17,35 @@
         }
     },
     "FRONTEND":{
+        "REACT":{
+            "name":"React",
+            "class":"bg-[#23272f] text-[#fff]",
+            "icon":"React"
+        },
+        "ASTRO":{
+            "name":"Astro",
+            "class":"bg-[#000] text-[#fff]",
+            "icon":"Astro"
+        },
         "NEXT":{
             "name":"Next.js",
             "class":"bg-[#000] text-[#fff]",
             "icon":"NextJS"
         },
-        "REACT":{
-            "name":"React",
+        "VITE":{
+            "name":"Vite",
+            "class":"bg-[#000] text-[#fff]",
+            "icon":"Vite"
+        },
+        "REACTQUERY":{
+            "name":"React query",
             "class":"bg-[#23272f] text-[#fff]",
-            "icon":"React"
+            "icon":"ReactQuery"
+        },
+        "REACTROUTER":{
+            "name":"React router",
+            "class":"bg-[#23272f] text-[#fff]",
+            "icon":"ReactRouter"
         }
     },
     "BACKEND":{
@@ -57,12 +82,25 @@
 
     },
     "TOOLS":{
+        "NODEJS":{
+            "name":"Node.js",
+            "class":"",
+            "icon":"NodeJS"
+        },
         "DOCKER":{
             "name":"Docker",
             "class":"bg-[#2ca5e044] text-[#fff]",
             "icon":"Docker"
+        },
+        "GIT":{
+            "name":"Git",
+            "class":"bg-[#2ca5e044] text-[#fff]",
+            "icon":"Git"
+        },
+        "GITHUB":{
+            "name":"Github",
+            "class":"bg-[#2ca5e044] text-[#fff]",
+            "icon":"Github"
         }
-    },
-    "TAGS":{
     }
 }
