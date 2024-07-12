@@ -4,17 +4,17 @@
         <h2 class="text-[1.5rem] text-center mb-[1rem]">Certificates</h2>
         <div class="flex flex-col md:flex-row gap-[1rem]">
             <div class="flex-grow-[1] flex flex-col justify-center gap-[1rem]">
-                <article class="p-[.5rem] border border-primary rounded-[.5rem]" style="box-shadow: 0 4px 6px rgba(20, 212, 201, 0.25);">
+                <article data-image="/portfolio/feria_ciencia_tecnologia.jpg" class="certificate-item p-[.5rem] border border-[#0d1117] rounded-[.5rem]">
                     <h3 class="uppercase font-bold mb-[.5rem] text-primary">Certificado 1er Lugar</h3>
                     <p class="text-[#fffb]">Feria ciencia y tecnología</p>
                     <time class="text-[#fffb]" datetime="2022">2022</time>
                 </article>
-                <article class="p-[.5rem] border border-primary rounded-[.5rem]" style="box-shadow: 0 4px 6px rgba(20, 212, 201, 0.25);">
+                <article data-image="/portfolio/hackathon_nicaragua.jpg" class="certificate-item p-[.5rem] border border-[#0d1117] rounded-[.5rem]">
                     <h3 class="uppercase font-bold mb-[.5rem] text-primary">Certificado participación</h3>
                     <p class="text-[#fffb]">Hackathon Nicaragua</p>
                     <time class="text-[#fffb]" datetime="2023">2023</time>
                 </article>
-                <article class="p-[.5rem] border border-primary rounded-[.5rem]" style="box-shadow: 0 4px 6px rgba(20, 212, 201, 0.25);">
+                <article data-image="/portfolio/certificado_cs50.jpg" class="certificate-item is-active p-[.5rem] border border-[#0d1117] rounded-[.5rem]">
                     <h3 class="uppercase font-bold mb-[.5rem] text-primary">Certificado CS50</h3>
                     <p class="text-[#fffb]">Curso CS50 - Universidad de Harvard</p>
                     <time class="text-[#fffb]" datetime="2024">2024</time>
@@ -22,9 +22,34 @@
             </div>
             <div class="flex-grow-[1] bg-[#0d1117] rounded-[.5rem] p-[1rem]">
                 <div class="max-w-[25rem] m-auto">
-                    <img class="" src="/portfolio/certificado_cs50.jpg" alt="Certificado CS50">
+                    <img class="certificate-img" src="/portfolio/certificado_cs50.jpg" alt="Certificado CS50">
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    const arts = document.getElementsByClassName('certificate-item')
+    const image = document.getElementsByClassName('certificate-img')[0] as HTMLImageElement
+
+    Array.from(arts).forEach(art =>{
+        art.addEventListener('mouseenter', ()=>{
+            Array.from(arts).forEach(artItem => artItem.classList.remove('is-active'))
+            art.classList.add('is-active')
+            image.src = art.getAttribute('data-image') as string
+        })
+    })
+</script>
+
+<style>
+    .certificate-item{
+        transition: .5s;
+    }
+
+    .is-active{
+        border: 1px solid #14d4c9;
+        box-shadow: 0 4px 6px rgba(20, 212, 201, 0.25);
+        transform: scale(1.01);
+    }
+</style>
