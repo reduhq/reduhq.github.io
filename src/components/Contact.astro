@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+
+---
+<section class="mt-[6rem]">
+    <div class="container">
+        <h2 class="text-[1.5rem] text-center mb-[.5rem]">Get in touch</h2>
+        <div class="flex gap-[1rem] flex-col md:flex-row">
+            <div class="w-full">
+                <p class="mb-[1rem] font-light">Siempre estoy abierto a nuevas <span>oportunidades</span>. Si te gustaría <span>colaborar</span>, no dudes en <span>contactarme</span>.</p>
+                <form action="">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Your email">
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" style="height:8rem" placeholder="Your message"></textarea>
+                    </div>
+                    <button class="bg-primary rounded-[.5rem] py-[.5rem] text-[#000]" type="submit">Send</button>
+                </form>
+            </div>
+            <div class="flex justify-center items-center w-full">
+                <Icon name="contact" size={300}/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    span{
+        font-weight: bold;
+        color: #14d4c9;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    form div{
+        display: flex;
+        flex-direction: column;
+    }
+    form div label{
+        color: #14d4c9;
+        font-weight: bold
+    }
+    form div input, form div textarea{
+        background-color: transparent;
+        border: 1px solid #30363d;
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+    }
+    form div input:focus, form div textarea:focus{
+        outline: none;
+    }
+</style>
