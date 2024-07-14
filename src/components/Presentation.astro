@@ -16,9 +16,9 @@ import { Icon } from 'astro-icon/components'
                 <button class="btn-cv bg-primary text-[#000] py-[.5rem] px-[1.5rem] rounded-[.5rem]">Download CV</button>
                 <button class="btn-contact border-primary border-[1px] py-[.5rem] px-[1.5rem] rounded-[.5rem] ml-[.5rem] text-primary">Contact Info</button>
             </div>
-            <div class="flex gap-[1rem] mt-[.5rem]">
-                <a target="_blank" href="https://github.com/reduhq"><Icon name="mdi:github" size={30}/></a>
-                <a target="_blank" href="https://www.linkedin.com/in/rey-halsall/"><Icon name="mdi:linkedin" size={30}/></a>
+            <div class="flex gap-[.5rem] mt-[1rem]">
+                <a class="border-[1px] border-primary rounded-full p-[.5rem] " target="_blank" href="https://github.com/reduhq"><Icon name="mdi:github" size={25}/></a>
+                <a class="border-[1px] border-primary rounded-full p-[.5rem] " target="_blank" href="https://www.linkedin.com/in/rey-halsall/"><Icon name="mdi:linkedin" size={25}/></a>
             </div>
         </div>
     </div>
@@ -45,8 +45,22 @@ import { Icon } from 'astro-icon/components'
         }
     }
 
+    img{
+        border: 1px solid #14d4c9;
+        box-shadow: 
+            0 0 10px #14d4c9;
+        transition: .3s;
+    }
+
+    img:hover{
+        transform: scale(1.05);
+        box-shadow: 
+            0 0 25px #14d4c9,
+            0 0 50px #14d4c9;
+    }
+
     .btn-cv{
-        transition: .5s;
+        transition: .3s;
     }
 
     .btn-cv:hover{
@@ -60,11 +74,11 @@ import { Icon } from 'astro-icon/components'
         position: relative;
         overflow: hidden;
         z-index: 1;
-        transition: color .5s, box-shadow .5s;
+        transition: color .5s, box-shadow .3s;
     }
     
     .btn-contact:hover{
-        transition-delay: 0s, .25s;
+        transition-delay: 0s, .1s;
         color: #fff;
         box-shadow: 
             0 0 25px #14d4c9,
@@ -81,10 +95,22 @@ import { Icon } from 'astro-icon/components'
         background: #14d4c9;
         transform: skewX(35deg);
         z-index: -1;
-        transition: 1s;
+        transition: .3s;
     }
 
     .btn-contact:hover::before{
         width: 100%;
+    }
+
+    a{
+        transition: .3s;
+    }
+    
+    a:hover{
+        transform: scale(1.1);
+        background: #14d4c9;
+        box-shadow: 
+            0 0 25px #14d4c9,
+            0 0 50px #14d4c9;
     }
 </style>
