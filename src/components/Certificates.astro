@@ -1,25 +1,29 @@
 ---
 import 'photoswipe/style.css';
+
+import { getI18N } from '../i18n';
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
 ---
 
 <section class="mt-[6rem]">
     <div class="container">
-        <h2 class="text-[1.5rem] text-center mb-[1rem]">Certificates</h2>
+        <h2 class="text-[1.5rem] text-center mb-[1rem]">{i18n.CERTIFICATES_TITLE}</h2>
         <div class="flex flex-col md:flex-row gap-[1rem]">
             <div class="flex-grow-[1] flex flex-col justify-center gap-[1rem]">
                 <article data-image="/portfolio/feria_ciencia_tecnologia.jpg" class="certificate-item p-[.5rem] border border-[#30363d] rounded-[.5rem]">
-                    <h3 class="uppercase font-bold mb-[.5rem] text-primary">Certificado 1er Lugar</h3>
-                    <p class="text-[#fffb]">Feria ciencia y tecnología</p>
+                    <h3 class="uppercase font-bold mb-[.5rem] text-primary">{i18n.CERTIFICATES_1_TITLE}</h3>
+                    <p class="text-[#fffb]">{i18n.CERTIFICATES_1_DESCRIPTION}</p>
                     <time class="text-[#fffb]" datetime="2022">2022</time>
                 </article>
                 <article data-image="/portfolio/hackathon_nicaragua.jpg" class="certificate-item p-[.5rem] border border-[#30363d] rounded-[.5rem]">
-                    <h3 class="uppercase font-bold mb-[.5rem] text-primary">Certificado participación</h3>
+                    <h3 class="uppercase font-bold mb-[.5rem] text-primary">{i18n.CERTIFICATES_2_TITLE}</h3>
                     <p class="text-[#fffb]">Hackathon Nicaragua</p>
                     <time class="text-[#fffb]" datetime="2023">2023</time>
                 </article>
                 <article data-image="/portfolio/certificado_cs50.jpg" class="certificate-item is-active p-[.5rem] border border-[#30363d] rounded-[.5rem]">
-                    <h3 class="uppercase font-bold mb-[.5rem] text-primary">Certificado CS50</h3>
-                    <p class="text-[#fffb]">Curso CS50 - Universidad de Harvard</p>
+                    <h3 class="uppercase font-bold mb-[.5rem] text-primary">{i18n.CERTIFICATES_3_TITLE}</h3>
+                    <p class="text-[#fffb]">{i18n.CERTIFICATES_3_DESCRIPTION}</p>
                     <time class="text-[#fffb]" datetime="2024">2024</time>
                 </article>
             </div>

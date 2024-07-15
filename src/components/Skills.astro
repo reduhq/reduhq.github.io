@@ -4,17 +4,27 @@ import data from './../tags.json'
 import { object } from 'astro/zod'
 const TAGS:{[section:string]:{[tag:string]:{name:string, icon:string, class:string}}} = data
 
+import { getI18N } from '../i18n';
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
+
+const getSubtitle = (subtitle:string)=>{
+    if(subtitle === 'LANGUAGES') return i18n.SKILLS_LANGUAGES
+    if(subtitle === 'FRONTEND') return 'Frontend'
+    if(subtitle === 'BACKEND') return 'Backend'
+    if(subtitle === 'TOOLS') return 'Tools'
+}
 ---
 
 
 <section class="mt-[6rem] text-[1.5rem]">
     <div class="container">
-        <h2 class="text-center">Skills</h2>
+        <h2 class="text-center">{i18n.SKILLS_TITLE}</h2>
         <div class="mt-[1rem]">
             {
                 Object.keys(TAGS).map(section =>(
                     <div class="mb-[.5rem] flex flex-col md:flex-row items-center gap-[.5rem]">
-                        <h2 class="lowercase w-[7rem] text-[1rem] text-center text-[#fff9]">{section}</h2>
+                        <h2 class="w-[7rem] text-[1rem] text-center text-[#fff9]">{() => getSubtitle(section)}</h2>
                         <ul class="flex flex-wrap gap-[.5rem] justify-center md:justify-normal">
                             {
                                 Object.keys(TAGS[section]).map(item =>(

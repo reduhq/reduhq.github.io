@@ -1,5 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components'
+
+import { getI18N } from '../i18n';
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
 ---
 
 
@@ -9,12 +13,12 @@ import { Icon } from 'astro-icon/components'
             <img class="rounded-full w-[40rem] m-auto" src="/portfolio/profile-picture.png" alt="Rey Eduardo Halsall Quintero">
         </div>
         <div class="grow-[2] w-[100%] flex flex-col justify-center">
-            <h3 class="text-primary text-[1.5rem] font-bold">Backend developer</h3>
-            <h1 class="text-[3rem] leading-[3.5rem] font-bold">Hello, I'M Rey <span class="block relative text-primary after:w-[5rem] after:h-[1px] after:bg-primary after:absolute after:bottom-0 after:left-0">Halsall</span></h1>
-            <p class="pt-[.5rem]">I’m a backend developer with notable skills in constructing efficient and robust systems, experienced in server-side logic, database optimizacion, and API implementation. </p>
+            <h3 class="text-primary text-[1.5rem] font-bold">Software developer</h3>
+            <h1 class="text-[3rem] leading-[3.5rem] font-bold">{i18n.PRESENTATION_TITLE} Rey <span class="block relative text-primary after:w-[5rem] after:h-[1px] after:bg-primary after:absolute after:bottom-0 after:left-0">Halsall</span></h1>
+            <p class="pt-[.5rem]" set:html={i18n.PRESENTATION_DESCRIPTION}></p>
             <div class="mt-[1rem]">
-                <button class="btn-cv bg-primary text-[#000] py-[.5rem] px-[1.5rem] rounded-[.5rem]">Download CV</button>
-                <button class="btn-contact border-primary border-[1px] py-[.5rem] px-[1.5rem] rounded-[.5rem] ml-[.5rem] text-primary">Contact Info</button>
+                <button class="btn-cv bg-primary text-[#000] py-[.5rem] px-[1.5rem] rounded-[.5rem]">{i18n.PRESENTATION_BTN_CV}</button>
+                <button class="btn-contact border-primary border-[1px] py-[.5rem] px-[1.5rem] rounded-[.5rem] ml-[.5rem] text-primary">{i18n.PRESENTATION_BTN_CONTACT}</button>
             </div>
             <div class="flex gap-[.5rem] mt-[1rem]">
                 <a class="border-[1px] border-primary rounded-full p-[.5rem] " target="_blank" href="https://github.com/reduhq"><Icon name="mdi:github" size={25}/></a>

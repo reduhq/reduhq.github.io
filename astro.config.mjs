@@ -7,6 +7,13 @@ import icon from "astro-icon";
 export default defineConfig({
   site:'https://reduhq.github.io',
   base: '/portfolio',
+  i18n:{
+    defaultLocale:'es',
+    locales:['es', 'en'],
+    routing:{
+      prefixDefaultLocale: false
+    }
+  },
   integrations: [
     tailwind(), 
     icon({

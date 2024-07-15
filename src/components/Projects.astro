@@ -7,15 +7,18 @@ const FRONTEND = data.FRONTEND
 const BACKEND = data.BACKEND
 const TOOLS = data.TOOLS
 
+import { getI18N } from '../i18n';
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
 ---
 
 <section class="container">
-    <h2 class="mt-[6rem] mb-[1rem] text-[1.5rem] text-center">Projects</h2>
+    <h2 class="mt-[6rem] mb-[1rem] text-[1.5rem] text-center">{i18n.PROJECTS_TITLE}</h2>
     <section class="grid grid-cols-[repeat(auto-fill,_minmax(23rem,_1fr))] gap-[1rem]">
         <ProjectCard
             image="/portfolio/noxbrew-web.jpg"
             title="Noxbrew"
-            description="NOXBREW es una plataforma web que diseñé y desarrollé para la venta de café, combinando una experiencia de usuario intuitiva con una interfaz atractiva y funcional."
+            description={i18n.PROJECTS_NOXBREW_DESCRIPTION}
             url='https://noxbrew.vercel.app/'
             githubFrontend='https://github.com/reduhq/NOXBREW'
             githubBackend='https://github.com/reduhq/NOXBREW-API'
@@ -24,7 +27,7 @@ const TOOLS = data.TOOLS
         <ProjectCard
             image="/portfolio/book_store_api.png"
             title="BookStore API"
-            description=" Una API que emula una tienda de libros en línea, permitiendo a los usuarios registrarse como lectores o escritores. Los lectores pueden explorar y guardar libros, mientras que los escritores pueden publicar y gestionar sus obras."
+            description={i18n.PROJECTS_BOOKSTORE_DESCRIPTION}
             githubBackend='https://github.com/reduhq/BookStoreAPI'
             tags={[LANGUAGES.PYTHON, BACKEND.FASTAPI, BACKEND.POSTGRE, BACKEND.SQLALCHEMY, TOOLS.DOCKER, BACKEND.JWT]}
         />
