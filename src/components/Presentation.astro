@@ -2,12 +2,14 @@
 import { Icon } from 'astro-icon/components'
 
 import { getI18N } from '../i18n';
+import Header from './Header.astro';
 const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
 ---
 
 
-<section class="container">
+<section id="home" class="container">
+	<Header />
     <div class="flex flex-col gap-[1rem] md:flex-row">
         <div class="grow-[1] p-[1rem]">
             <img class="rounded-full w-[40rem] m-auto" src="/portfolio/profile-picture.png" alt="Rey Eduardo Halsall Quintero">

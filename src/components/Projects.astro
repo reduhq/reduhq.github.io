@@ -12,9 +12,9 @@ const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
 ---
 
-<section class="container">
+<section id="projects" class="container">
     <h2 class="mt-[6rem] mb-[1rem] text-[1.5rem] text-center">{i18n.PROJECTS_TITLE}</h2>
-    <section class="grid grid-cols-[repeat(auto-fill,_minmax(23rem,_1fr))] gap-[1rem]">
+    <div class="grid grid-cols-[repeat(auto-fill,_minmax(23rem,_1fr))] gap-[1rem]">
         <ProjectCard
             image="/portfolio/noxbrew-web.jpg"
             title="Noxbrew"
@@ -31,6 +31,6 @@ const i18n = getI18N({currentLocale})
             githubBackend='https://github.com/reduhq/BookStoreAPI'
             tags={[LANGUAGES.PYTHON, BACKEND.FASTAPI, BACKEND.POSTGRE, BACKEND.SQLALCHEMY, TOOLS.DOCKER, BACKEND.JWT]}
         />
-    </section>
+    </div>
 </section>
 

@@ -7,31 +7,31 @@ import { Icon } from "astro-icon/components";
     <div class="nav">
         <ul>
             <li class="nav-item active">
-                <a href="#">
+                <a href="#home">
                     <span class="icon"><Icon name='mdi:home-outline' size={30}/></span>
                     <span class="text">Home</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="#projects">
                     <span class="icon"><Icon name="mdi:code" size={30}/></span>
                     <span class="text">Projects</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="#skills">
                     <span class="icon"><Icon name="mdi:tools" size={30}/></span>
                     <span class="text">Skills</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="#certificates">
                     <span class="icon"><Icon name="mdi:certificate-outline" size={30}/></span>
                     <span class="text">Certificates</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#">
+                <a href="#contact">
                     <span class="icon"><Icon name="mdi:email-multiple-outline" size={30}/></span>
                     <span class="text">Contact</span>
                 </a>
@@ -49,6 +49,24 @@ import { Icon } from "astro-icon/components";
             item.classList.add("active")
         })
     })
+
+    const sections = document.getElementsByTagName('section')
+    window.onscroll = ()=>{
+        Array.from(sections).forEach(section =>{
+            let top = window.scrollY
+            let offset = section.offsetTop - 200
+            let height = section.offsetHeight
+            let id = section.getAttribute('id')
+
+            if(top >= offset && top < offset + height){
+                Array.from(items).forEach(item =>{
+                    item.classList.remove('active')
+                    const li = document.querySelector('nav div ul li a[href*='+id+']')?.parentElement
+                    li?.classList.add('active')
+                })
+            }
+        })
+    }
 </script>
 
 <style>
