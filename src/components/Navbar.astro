@@ -1,0 +1,177 @@
+---
+import { Icon } from "astro-icon/components";
+
+---
+
+<nav>
+    <div class="nav">
+        <ul>
+            <li class="nav-item active">
+                <a href="#">
+                    <span class="icon"><Icon name='mdi:home-outline' size={30}/></span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <span class="icon"><Icon name="mdi:code" size={30}/></span>
+                    <span class="text">Projects</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <span class="icon"><Icon name="mdi:tools" size={30}/></span>
+                    <span class="text">Skills</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <span class="icon"><Icon name="mdi:certificate-outline" size={30}/></span>
+                    <span class="text">Certificates</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <span class="icon"><Icon name="mdi:email-multiple-outline" size={30}/></span>
+                    <span class="text">Contact</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const items = document.getElementsByClassName('nav-item')
+    Array.from(items).forEach(item =>{
+        item.addEventListener('click', ()=>{
+            Array.from(items).forEach(i => i.classList.remove("active"))
+            item.classList.add("active")
+        })
+    })
+</script>
+
+<style>
+    nav{
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+
+    .nav{
+        position: relative;
+        /* background-color: #202C39; */
+        padding: .75rem 1.5rem;
+        border-radius: .5rem;
+        
+        /* color: rgb(43, 58, 103); */
+        background: rgba( 32, 44, 57, 1 );
+        box-shadow: 0 8px 32px 0 rgba(43, 58, 103, 0.37);
+        backdrop-filter: blur( 3.5px );
+        -webkit-backdrop-filter: blur( 3.5px );
+        border-radius: 10px;
+    }
+
+    .nav ul{
+        /* position: relative; */
+        display: flex;
+        /* gap: 1rem; */
+    }
+
+    .nav ul li{
+        position: relative;
+        width: 4.5rem;
+        z-index: 1
+    }
+
+    .nav ul li a{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav ul li a .icon{
+        position: relative;
+        transition: .5s;
+    }
+
+    .nav ul li a .text{
+        color: #000;
+        position: absolute;
+        background-color: rgb(20, 212, 201);
+        padding: 0 .5rem;
+        border-radius: 1rem;
+        font-size: .75rem;
+        transition: .5s;
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    
+    .nav ul li.active a .text{
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+    
+    .nav ul li.active a .icon{
+        transform: translateY(-1.75rem);
+        color: #14d4c9;
+    }
+
+    .indicator{
+        position: absolute;
+        top: -50%;
+        width: 4.5rem;
+        height: 4.5rem;
+        background-color: #202C39;
+        border-radius: 100rem;
+        transition: .5s;
+    }
+
+    .indicator::before{
+        content: "";
+        position: absolute;
+        top: -.59rem;
+        left: -1.75rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        background: transparent;
+        border-radius: 100rem;
+        box-shadow: 1.2rem 1.5rem #202C39;
+    }
+    
+    .indicator::after{
+        content: "";
+        position: absolute;
+        top: -.59rem;
+        right: -1.75rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        background: transparent;
+        border-radius: 100rem;
+        box-shadow: -1.2rem 1.5rem #202C39;
+    }
+
+    .nav ul li:nth-child(1).active ~ .indicator{
+        transform: translateX(calc(4.5rem * 0));
+    }
+    
+    .nav ul li:nth-child(2).active ~ .indicator{
+        transform: translateX(calc(4.5rem * 1));
+    }
+    
+    .nav ul li:nth-child(3).active ~ .indicator{
+        transform: translateX(calc(4.5rem * 2));
+    }
+    
+    .nav ul li:nth-child(4).active ~ .indicator{
+        transform: translateX(calc(4.5rem * 3));
+    }
+
+    .nav ul li:nth-child(5).active ~ .indicator{
+        transform: translateX(calc(4.5rem * 4));
+    }
+</style>
