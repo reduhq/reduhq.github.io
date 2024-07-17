@@ -1,0 +1,113 @@
+---
+import { Icon } from "astro-icon/components";
+
+
+---
+
+<nav>
+    <a class="nav-item active" href="#home">
+        <span class="icon"><Icon name='mdi:home-outline' size={30}/></span>
+        <span class="text">Home</span>
+    </a>
+    <a class="nav-item" href="#projects">
+        <span class="icon"><Icon name="mdi:code" size={30}/></span>
+        <span class="text">Projects</span>
+    </a>
+    <a class="nav-item" href="#skills">
+        <span class="icon"><Icon name="mdi:tools" size={26}/></span>
+        <span class="text">Skills</span>
+    </a>
+    <a class="nav-item" href="#certificates">
+        <span class="icon"><Icon name="mdi:certificate-outline" size={30}/></span>
+        <span class="text">Certificates</span>
+    </a>
+    <a class="nav-item" href="#contact">
+        <span class="icon"><Icon name="mdi:email-multiple-outline" size={25}/></span>
+        <span class="text">Contact</span>
+    </a>
+</nav>
+
+<script>
+    const items = document.getElementsByClassName('nav-item')
+    Array.from(items).forEach(item =>{
+        item.addEventListener('click', ()=>{
+            Array.from(items).forEach(i => i.classList.remove("active"))
+            item.classList.add("active")
+        })
+    })
+
+    const sections = document.getElementsByTagName('section')
+    window.onscroll = ()=>{
+        Array.from(sections).forEach(section =>{
+            let top = window.scrollY
+            let offset = section.offsetTop - 200
+            let height = section.offsetHeight
+            let id = section.getAttribute('id')
+
+            if(top >= offset && top < offset + height){
+                Array.from(items).forEach(item =>{
+                    item.classList.remove('active')
+                    const li = document.querySelector('nav a[href*='+id+']')
+                    li?.classList.add('active')
+                })
+            }
+        })
+    }
+</script>
+
+<style>
+    nav{
+        position: fixed;
+        bottom: -5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: .5rem;
+        padding: .5rem 1rem;
+        border-radius: 2rem;
+        z-index: 1000;
+        animation: showNavbar 1s forwards;
+        animation-delay: .5s;
+        
+        /* color: rgb(13, 17, 23); */
+        background: rgba( 20, 212, 201, 0.1 );
+        box-shadow: 0 8px 32px 0 rgba(20, 212, 201, 0.20);
+        backdrop-filter: blur( 7px );
+        -webkit-backdrop-filter: blur( 7px );
+        /* border-radius: 10px; */
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    @keyframes showNavbar {
+        to{
+            bottom: .5rem;
+        }
+    }
+    nav a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 2.5rem;
+    }
+    nav .icon{
+        position: absolute;
+        transition: .5s;
+    }
+    nav .text{
+        position: absolute;
+        font-size: .75rem;
+        bottom: -.5rem;
+        transition: .5s;
+        opacity: 0;
+    }
+    .active .text{
+        opacity: 1;
+        transform: translateY(-1rem);
+        color: #14d4c9;
+    }
+    .active .icon{
+        transform: translateY(-.5rem);
+        color: #14d4c9;
+    }
+</style>

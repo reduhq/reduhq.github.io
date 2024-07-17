@@ -6,9 +6,10 @@ import Skills from './Skills.astro';
 import Certificates from './Certificates.astro';
 import Contact from './Contact.astro';
 import Footer from './Footer.astro';
-import Navbar from './Navbar.astro'
+// import Navbar from './Navbar.astro'
 
 import { getI18N } from '../i18n';
+import NavbarV2 from './NavbarV2.astro';
 const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
 ---
@@ -21,7 +22,7 @@ const i18n = getI18N({currentLocale})
 		<Certificates/>
 		<Contact/>
 		<Footer/>
-		<Navbar/>
+		<NavbarV2/>
 	</main>
 </Layout>
 
