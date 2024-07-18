@@ -1,29 +1,31 @@
 ---
 import { Icon } from "astro-icon/components";
 
-
+import { getI18N } from '../i18n';
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
 ---
 
 <nav>
     <a class="nav-item active" href="#home">
         <span class="icon"><Icon name='mdi:home-outline' size={30}/></span>
-        <span class="text">Home</span>
+        <span class="text">{i18n.NAVBAR_HOME}</span>
     </a>
     <a class="nav-item" href="#projects">
         <span class="icon"><Icon name="mdi:code" size={30}/></span>
-        <span class="text">Projects</span>
+        <span class="text">{i18n.PROJECTS_TITLE}</span>
     </a>
     <a class="nav-item" href="#skills">
         <span class="icon"><Icon name="mdi:tools" size={26}/></span>
-        <span class="text">Skills</span>
+        <span class="text">{i18n.SKILLS_TITLE}</span>
     </a>
     <a class="nav-item" href="#certificates">
         <span class="icon"><Icon name="mdi:certificate-outline" size={30}/></span>
-        <span class="text">Certificates</span>
+        <span class="text">{i18n.CERTIFICATES_TITLE}</span>
     </a>
     <a class="nav-item" href="#contact">
         <span class="icon"><Icon name="mdi:email-multiple-outline" size={25}/></span>
-        <span class="text">Contact</span>
+        <span class="text">{i18n.NAVBAR_CONTACT}</span>
     </a>
 </nav>
 

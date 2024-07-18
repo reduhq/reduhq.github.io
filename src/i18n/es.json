@@ -1,6 +1,9 @@
 {
     "SEO_TITLE":"",
     "SEO_DESCRIPTION":"",
+    "HEADER_BTN_LANGUAGE_TEXT":"Idioma",
+    "HEADER_BTN_LANGUAGE_FLAG":"SpainFlag",
+    "HEADER_BTN_LANGUAGE_URL":"/portfolio/en",
     "PRESENTATION_TITLE":"Hola, Soy",
     "PRESENTATION_DESCRIPTION":"Desarrollador de software con 5 años de experiencia en aplicaciones web con <span style='color:#14d4c9; font-weight:bold;'>React</span> y APIs con <span style='color:#14d4c9; font-weight:bold;'>FastAPI</span> y <span style='color:#14d4c9; font-weight:bold;'>Express</span>. Enfocado en soluciones que generan impacto.",
     "PRESENTATION_BTN_CV":"Descargar CV",
@@ -23,5 +26,7 @@
     "CONTACT_EMAIL_PLACEHOLDER":"Tu email",
     "CONTACT_MESSAGE":"Mensaje",
     "CONTACT_MESSAGE_PLACEHOLDER":"Tu mensaje",
-    "CONTACT_BTN_SEND":"Enviar"
+    "CONTACT_BTN_SEND":"Enviar",
+    "NAVBAR_HOME":"Inicio",
+    "NAVBAR_CONTACT":"Contacto"
 }

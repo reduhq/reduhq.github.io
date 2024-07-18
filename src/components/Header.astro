@@ -1,6 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
 
+import { getI18N } from '../i18n';
+const {currentLocale} = Astro
+const i18n = getI18N({currentLocale})
+
+---
 <header class="py-[1rem]">
-    <div class="container">
+    <div class="container flex justify-between">
         <h2 class="font-bold text-[1.5rem]">@<span class="text-primary">reduhq</span></h2>
+        <button class="border border-primary rounded-[.5rem] shadow-[0px_2px_#14d4c9] active:translate-y-[2px] active:shadow-[0px_0px_#14d4c9] transition hover:bg-[#fff1] duration-[.5s] ">
+            <a class="flex items-center h-full w-full px-[1rem] " href={i18n.HEADER_BTN_LANGUAGE_URL}>
+                <span class="flex justify-center gap-[.5rem]">{i18n.HEADER_BTN_LANGUAGE_TEXT}: <Icon name={i18n.HEADER_BTN_LANGUAGE_FLAG} size={20}/></span>
+            </a>
+        </button>
     </div>
 </header>

@@ -1,6 +1,9 @@
 {
     "SEO_TITLE":"",
     "SEO_DESCRIPTION":"",
+    "HEADER_BTN_LANGUAGE_TEXT":"Language",
+    "HEADER_BTN_LANGUAGE_FLAG":"UKFlag",
+    "HEADER_BTN_LANGUAGE_URL":"/portfolio",
     "PRESENTATION_TITLE":"Hello, I'M",
     "PRESENTATION_DESCRIPTION":"Software developer with 5 years of experience in web applications with <span style='color:#14d4c9; font-weight:bold;'>React</span> and APIs with <span style='color:#14d4c9; font-weight:bold;'>FastAPI</span> and <span style='color:#14d4c9; font-weight:bold;'>Express</span>. Focused on solutions that generate impact.",
     "PRESENTATION_BTN_CV":"Download CV",
@@ -23,5 +26,7 @@
     "CONTACT_EMAIL_PLACEHOLDER":"Your email",
     "CONTACT_MESSAGE":"Message",
     "CONTACT_MESSAGE_PLACEHOLDER":"Your message",
-    "CONTACT_BTN_SEND":"Send"
+    "CONTACT_BTN_SEND":"Send",
+    "NAVBAR_HOME":"Home",
+    "NAVBAR_CONTACT":"Contact"
 }
