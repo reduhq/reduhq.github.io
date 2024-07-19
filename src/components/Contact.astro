@@ -38,6 +38,11 @@ const i18n = getI18N({currentLocale})
 
 <script>
     import {toast} from 'sonner'
+    import { getI18N } from '../i18n';
+    
+    const currentLocale = document.documentElement.lang
+    const i18n = getI18N({currentLocale})
+    
     
     document.querySelectorAll('form div input, form div textarea').forEach(item=>{
         item.addEventListener('input', (e)=>{
@@ -61,7 +66,7 @@ const i18n = getI18N({currentLocale})
         
         const validated = document.getElementsByClassName('required')
         if(Array.from(validated).length > 0){
-            toast.error("llena todos los campos");
+            toast.error(i18n.CONTACT_EMPTY_FIELDS_NOTIFICATION);
             return
         }
 
@@ -69,7 +74,7 @@ const i18n = getI18N({currentLocale})
         const emailInput = document.querySelector('form div input[name="email"]') as HTMLInputElement
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if(!regex.test(emailInput.value)){
-            toast.error('Email invalido')
+            toast.error(i18n.CONTACT_INVALID_EMAIL_NORIFICATION)
             emailInput.classList.add('required')
             return
         }
@@ -91,9 +96,14 @@ const i18n = getI18N({currentLocale})
         }
 
         toast.promise(sendEmail, {
-            loading: 'Enviando...',
-            success:'Formulario enviado con éxito',
-            error:'Error al enviar, intente mas tarde...'
+            loading: i18n.CONTACT_LOADING_NOTIFICATION,
+            success:()=>{
+                document.querySelectorAll('form div input, form div textarea').forEach(item =>{
+                    (item as HTMLInputElement).value = ""
+                })
+                return i18n.CONTACT_SUCCESS_NOTIFICATION
+            },
+            error:i18n.CONTACT_ERROR_NOTIFICATION
         })
     });
 </script>

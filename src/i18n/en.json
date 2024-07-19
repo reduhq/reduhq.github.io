@@ -28,5 +28,10 @@
     "CONTACT_MESSAGE_PLACEHOLDER":"Your message",
     "CONTACT_BTN_SEND":"Send",
     "NAVBAR_HOME":"Home",
-    "NAVBAR_CONTACT":"Contact"
+    "NAVBAR_CONTACT":"Contact",
+    "CONTACT_INVALID_EMAIL_NORIFICATION":"Invalid email",
+    "CONTACT_EMPTY_FIELDS_NOTIFICATION":"Fill out all fields",
+    "CONTACT_LOADING_NOTIFICATION":"Sending...",
+    "CONTACT_SUCCESS_NOTIFICATION":"Message sent succesfully",
+    "CONTACT_ERROR_NOTIFICATION": "Error sending, try again later..."
 }
