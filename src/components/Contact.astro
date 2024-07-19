@@ -13,7 +13,7 @@ const i18n = getI18N({currentLocale})
             <div class="w-full">
                 <p class="mb-[1rem] font-light" set:html={i18n.CONTACT_DESCRIPTION}></p>
                 <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_EMAIL_ACCESS_KEY}>
+                    <input type="hidden" name="access_key" value={import.meta.env.EMAIL_ACCESS_KEY}>
                     <div>
                         <label for="name">{i18n.CONTACT_NAME}</label>
                         <input name="name" type="text" placeholder={i18n.CONTACT_NAME_PLACEHOLDER}>
@@ -76,11 +76,17 @@ const i18n = getI18N({currentLocale})
 
         // Recoge los datos del formulario
         const formData = new FormData(this);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
         const sendEmail = ()=>{
             return fetch(this.action, {
                 method:this.method,
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
             })
         }
 
