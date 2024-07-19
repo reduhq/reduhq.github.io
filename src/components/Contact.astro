@@ -4,6 +4,7 @@ import { Icon } from "astro-icon/components";
 import { getI18N } from '../i18n';
 const {currentLocale} = Astro
 const i18n = getI18N({currentLocale})
+
 ---
 <section id="contact" class="mt-[6rem]">
     <div class="container">
@@ -11,14 +12,15 @@ const i18n = getI18N({currentLocale})
         <div class="flex gap-[1rem] flex-col md:flex-row">
             <div class="w-full">
                 <p class="mb-[1rem] font-light" set:html={i18n.CONTACT_DESCRIPTION}></p>
-                <form action="">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_EMAIL_ACCESS_KEY}>
                     <div>
                         <label for="name">{i18n.CONTACT_NAME}</label>
-                        <input type="text" placeholder={i18n.CONTACT_NAME_PLACEHOLDER}>
+                        <input name="name" type="text" placeholder={i18n.CONTACT_NAME_PLACEHOLDER}>
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input type="email" placeholder={i18n.CONTACT_EMAIL_PLACEHOLDER}>
+                        <input name="email" type="text" placeholder={i18n.CONTACT_EMAIL_PLACEHOLDER}>
                     </div>
                     <div>
                         <label for="message">{i18n.CONTACT_MESSAGE}</label>
@@ -33,6 +35,62 @@ const i18n = getI18N({currentLocale})
         </div>
     </div>
 </section>
+
+<script>
+    import {toast} from 'sonner'
+    
+    document.querySelectorAll('form div input, form div textarea').forEach(item=>{
+        item.addEventListener('input', (e)=>{
+            const inputValue = (e.target as HTMLInputElement).value 
+            if(!inputValue) item.classList.add("required")
+            else item.classList.remove("required")
+        });
+        item.addEventListener('blur', (e)=>{ // when the input loses the focus
+            const inputValue = (e.target as HTMLInputElement).value 
+            if(!inputValue) item.classList.add("required")
+            else item.classList.remove("required")
+        });
+    });
+
+    (document.getElementById('contactForm') as HTMLFormElement).addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío del formulario
+        // Validating the form
+        document.querySelectorAll('form div input, form div textarea').forEach(item =>{
+            if(!(item as HTMLInputElement || HTMLTextAreaElement).value) item.classList.add('required')
+        })
+        
+        const validated = document.getElementsByClassName('required')
+        if(Array.from(validated).length > 0){
+            toast.error("llena todos los campos");
+            return
+        }
+
+        // Validating the email
+        const emailInput = document.querySelector('form div input[name="email"]') as HTMLInputElement
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!regex.test(emailInput.value)){
+            toast.error('Email invalido')
+            emailInput.classList.add('required')
+            return
+        }
+
+        // Recoge los datos del formulario
+        const formData = new FormData(this);
+
+        const sendEmail = ()=>{
+            return fetch(this.action, {
+                method:this.method,
+                body: formData
+            })
+        }
+
+        toast.promise(sendEmail, {
+            loading: 'Enviando...',
+            success:'Formulario enviado con éxito',
+            error:'Error al enviar, intente mas tarde...'
+        })
+    });
+</script>
 
 <style>
     span{
@@ -60,5 +118,8 @@ const i18n = getI18N({currentLocale})
     }
     form div input:focus, form div textarea:focus{
         outline: none;
+    }
+    form div .required{
+        border: 1px solid #f00;
     }
 </style>
