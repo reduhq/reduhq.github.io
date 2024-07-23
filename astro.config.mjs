@@ -7,7 +7,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://reduhq.github.io',
-  base: '/portfolio',
+  // base: '/portfolio',
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],

@@ -10,21 +10,22 @@ const {
     title,
     description,
     canonical,
-    image = 'reduhq-portfolio-img',
+    image,
     language = 'es'
 } = Astro.props
 const lang = language === 'en' ? 'en_US' : 'es_ES'
 
 
 const determineCanonicalURL = ()=>{
-    if(Astro.url.host.includes("localhost")) return "http://localhost:4321/portfolio"
-    return canonical || `${Astro.url.pathname}`
+    if(Astro.url.host.includes("localhost")) return "http://localhost:4321"
+    const pathname = Astro.url.pathname.split('/').filter(path => path!=='en')
+    return canonical || pathname.join('/')
 }
 const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
 
 const determineAlternativeURL = ()=>{
-    if(Astro.url.host.includes("localhost")) return "http://localhost:4321/portfolio/en"
-    return canonical || `en/${Astro.url.pathname}`
+    if(Astro.url.host.includes("localhost")) return "http://localhost:4321/en"
+    return canonical || (language==='en'?"":"en") + Astro.url.pathname
 }
 const alternativeURL = new URL(determineAlternativeURL(), Astro.site)
 ---
@@ -40,7 +41,8 @@ const alternativeURL = new URL(determineAlternativeURL(), Astro.site)
 
 <meta name="keywords" content="Rey, Halsall, reduhq, portafolio, portfolio, freelance, Nicaragua, Managua, software, developer, backend, frontend, fullstack, react, astro, nextjs, expressjs, fastapi, javascript, typescript, python, html, css, diseño, web, pagina">
 
-<meta property="og:image" content={new URL(image, Astro.url)} />
+{image&&<meta property="og:image" content={new URL(image, Astro.site)} />}
+{!image&&<meta property="og:image" content={new URL(language==='en'?'reduhq-portfolio-img-en.png':'reduhq-portfolio-img.png', Astro.site)} />}
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
@@ -52,7 +54,7 @@ const alternativeURL = new URL(determineAlternativeURL(), Astro.site)
 <meta name="googlebot" content="index, follow" />
 
 
-<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
 

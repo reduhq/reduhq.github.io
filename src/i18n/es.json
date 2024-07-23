@@ -3,7 +3,7 @@
     "SEO_DESCRIPTION":"Hola, Soy Rey Halsall. Desarrollador de software con 5 años de experiencia en aplicaciones web con React y APIs con FastAPI y Express. Enfocado en soluciones que generan impacto.",
     "HEADER_BTN_LANGUAGE_TEXT":"Idioma",
     "HEADER_BTN_LANGUAGE_FLAG":"SpainFlag",
-    "HEADER_BTN_LANGUAGE_URL":"/portfolio/en",
+    "HEADER_BTN_LANGUAGE_URL":"/en",
     "PRESENTATION_TITLE":"Hola, Soy",
     "PRESENTATION_DESCRIPTION":"Desarrollador de software con 5 años de experiencia en aplicaciones web con <span style='color:#14d4c9; font-weight:bold;'>React</span> y APIs con <span style='color:#14d4c9; font-weight:bold;'>FastAPI</span> y <span style='color:#14d4c9; font-weight:bold;'>Express</span>. Enfocado en soluciones que generan impacto.",
     "PRESENTATION_BTN_CV":"Descargar CV",

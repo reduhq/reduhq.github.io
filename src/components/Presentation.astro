@@ -12,14 +12,14 @@ const i18n = getI18N({currentLocale})
 	<Header />
     <div class="flex flex-col gap-[1rem] md:flex-row">
         <div class="grow-[1] p-[1rem]">
-            <img class="rounded-full w-[40rem] m-auto" src="/portfolio/profile-picture.png" alt="Rey Eduardo Halsall Quintero">
+            <img class="rounded-full w-[40rem] m-auto" src="/profile-picture.png" alt="Rey Eduardo Halsall Quintero">
         </div>
         <div class="grow-[2] w-[100%] flex flex-col justify-center">
             <h3 class="text-primary text-[1.5rem] font-bold">Software developer</h3>
             <h1 class="text-[3rem] leading-[3.5rem] font-bold">{i18n.PRESENTATION_TITLE} Rey <span class="block relative text-primary after:w-[5rem] after:h-[1px] after:bg-primary after:absolute after:bottom-0 after:left-0">Halsall</span></h1>
             <p class="pt-[.5rem]" set:html={i18n.PRESENTATION_DESCRIPTION}></p>
             <div class="mt-[1rem]">
-                <button class="btn-cv bg-primary text-[#000] rounded-[.5rem]"><a class="block h-full w-full py-[.5rem] px-[1.5rem]" target="_blank" href="/portfolio/reduhqCV.pdf">{i18n.PRESENTATION_BTN_CV}</a></button>
+                <button class="btn-cv bg-primary text-[#000] rounded-[.5rem]"><a class="block h-full w-full py-[.5rem] px-[1.5rem]" target="_blank" href="/reduhqCV.pdf">{i18n.PRESENTATION_BTN_CV}</a></button>
                 <button class="btn-contact border-primary border-[1px] py-[.5rem] px-[1.5rem] rounded-[.5rem] ml-[.5rem] text-primary"><a href="#contact">{i18n.CONTACT_TITLE}</a></button>
             </div>
             <div class="networks flex gap-[.5rem] mt-[1rem]">
