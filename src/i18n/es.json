@@ -1,11 +1,11 @@
 {
     "SEO_TITLE":"Rey Halsall | @reduhq | Portafolio",
-    "SEO_DESCRIPTION":"Hola, Soy Rey Halsall. Desarrollador de software con 5 años de dedicación y aprendizaje, enfocado en aplicaciones web con React y APIs con FastAPI y Express. Enfocado en soluciones que generan impacto.",
+    "SEO_DESCRIPTION":"Hola, Soy Rey Halsall. Desarrollador de software con 5 años de dedicación y aprendizaje, enfocado en aplicaciones web con React y APIs con FastAPI, Express y .NET. Enfocado en soluciones que generan impacto.",
     "HEADER_BTN_LANGUAGE_TEXT":"Idioma",
     "HEADER_BTN_LANGUAGE_FLAG":"SpainFlag",
     "HEADER_BTN_LANGUAGE_URL":"/en",
     "PRESENTATION_TITLE":"Hola, Soy",
-    "PRESENTATION_DESCRIPTION":"Desarrollador de software con 5 años de dedicación y aprendizaje, enfocado en aplicaciones web con <span style='color:#14d4c9; font-weight:bold;'>React</span> y APIs con <span style='color:#14d4c9; font-weight:bold;'>FastAPI</span> y <span style='color:#14d4c9; font-weight:bold;'>Express</span>.",
+    "PRESENTATION_DESCRIPTION":"Desarrollador de software con 5 años de dedicación y aprendizaje, enfocado en aplicaciones web con <span style='color:#14d4c9; font-weight:bold;'>React</span> y APIs con <span style='color:#14d4c9; font-weight:bold;'>FastAPI</span>, <span style='color:#14d4c9; font-weight:bold;'>Express</span> y <span style='color:#14d4c9; font-weight:bold;'>.NET</span>.",
     "PRESENTATION_BTN_CV":"Descargar CV",
     "PRESENTATION_BTN_CONTACT":"Info Contacto",
     "PROJECTS_TITLE":"Proyectos",
