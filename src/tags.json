@@ -14,6 +14,11 @@
             "name":"Python",
             "class":"bg-[#193449] text-[#fff]",
             "icon":"Python"
+        },
+        "CSHARP":{
+            "name":"C#",
+            "class":"bg-[#193449] text-[#fff]",
+            "icon":"CSharp"
         }
     },
     "FRONTEND":{
@@ -58,6 +63,11 @@
             "name":"FastAPI",
             "class":"bg-[#006e6366] text-[#fff]",
             "icon":"FastAPI"
+        },
+        ".NET":{
+            "name":".Net",
+            "class":"bg-[#193449] text-[#fff]",
+            "icon":"Dotnet"
         },
         "POSTGRE":{
             "name":"PostgreSQL",
